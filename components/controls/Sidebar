@@ -1,0 +1,622 @@
+- conSidebar:
+    Control: GroupContainer@1.3.0
+    Variant: ManualLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      Fill: =RGBA(26, 26, 26, 1)
+      Height: =Parent.Height
+      RadiusBottomLeft: =0
+      RadiusBottomRight: =0
+      RadiusTopLeft: =0
+      RadiusTopRight: =0
+      Width: =If(varSidebar, Parent.Width *17%, Parent.Width * 5%)
+    Children:
+      - conUser:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height * 7%
+            LayoutDirection: =LayoutDirection.Horizontal
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            Y: =Parent.Height - Self.Height
+          Children:
+            - lblName:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(202, 202, 202, 1)
+                  FillPortions: =1
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =Parent.Height
+                  LayoutMinWidth: =0
+                  PaddingLeft: =0
+                  Size: =12
+                  Text: =User().FullName
+                  Visible: =If(varSidebar, true, false)
+                  X: =Parent.Width/2 - Self.Width/2
+      - conItems:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height - conUser.Height - conTitle.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+            Y: =conTitle.Height
+          Children:
+            - conBlock1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutMinHeight: =0
+                  LayoutMinWidth: =0
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                  Y: =40
+                Children:
+                  - conBlock1Item1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - lblItem1:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(202, 202, 202, 1)
+                              Font: =Font.'Open Sans'
+                              FontWeight: =FontWeight.Semibold
+                              PaddingBottom: =0
+                              PaddingLeft: =25
+                              PaddingTop: =15
+                              Text: ="Main"
+                              Visible: =If(varSidebar, true, false)
+                  - conBlock1ItemCon:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - conBlock1Item2:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =41
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width
+                            Children:
+                              - icoItem2:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    FillPortions: =If(varSidebar, 1, 0)
+                                    Height: =Parent.Height
+                                    Icon: =Icon.Home
+                                    PaddingBottom: =9
+                                    PaddingLeft: =If(varSidebar, 20, 0)
+                                    PaddingTop: =7
+                                    Width: =Parent.Width
+                              - lblItem2:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =12
+                                    Text: ="Home"
+                                    Visible: =If(varSidebar, true, false)
+                        - Button1:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(0, 0, 0, 0)
+                              DisabledFill: =RGBA(0, 0, 0, 0)
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(0, 0, 0, 0)
+                              HoverFill: =RGBA(149, 149, 149, 0.2)
+                              PressedBorderColor: =
+                              PressedColor: =
+                              PressedFill: =ColorFade(RGBA(149, 149, 149, 0.2), -20%)
+                              Text: =
+                              Width: =Parent.Width *90%
+                              X: =Parent.Width/2 - Self.Width/2
+                              Y: =1
+                  - conBlock1ItemCon2:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - conBlock1Item3:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =41
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width
+                            Children:
+                              - icoItem3:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    FillPortions: =If(varSidebar, 1, 0)
+                                    Height: =Parent.Height
+                                    Icon: =Icon.Waffle
+                                    PaddingBottom: =9
+                                    PaddingLeft: =If(varSidebar, 20, 0)
+                                    PaddingTop: =7
+                                    Width: =Parent.Width
+                              - lblItem3:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =12
+                                    Text: ="Dashboard"
+                                    Visible: =If(varSidebar, true, false)
+                        - Button2:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(0, 0, 0, 0)
+                              DisabledFill: =RGBA(0, 0, 0, 0)
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(0, 0, 0, 0)
+                              HoverFill: =RGBA(149, 149, 149, 0.2)
+                              PressedBorderColor: =
+                              PressedColor: =
+                              PressedFill: =ColorFade(RGBA(149, 149, 149, 0.2), -20%)
+                              Text: =
+                              Width: =Parent.Width *90%
+                              X: =Parent.Width/2 - Self.Width/2
+                  - conBlock1ItemCon3:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - conBlock1Item4:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =41
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width
+                            Children:
+                              - icoItem4:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    FillPortions: =If(varSidebar, 1, 0)
+                                    Height: =Parent.Height
+                                    Icon: =Icon.Globe
+                                    PaddingBottom: =9
+                                    PaddingLeft: =If(varSidebar, 20, 0)
+                                    PaddingTop: =7
+                                    Width: =Parent.Width
+                              - lblItem4:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =12
+                                    Text: ="Analytics"
+                                    Visible: =If(varSidebar, true, false)
+                        - Button3:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(0, 0, 0, 0)
+                              DisabledFill: =RGBA(0, 0, 0, 0)
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(0, 0, 0, 0)
+                              HoverFill: =RGBA(149, 149, 149, 0.2)
+                              PressedBorderColor: =
+                              PressedColor: =
+                              PressedFill: =ColorFade(RGBA(149, 149, 149, 0.2), -20%)
+                              Text: =
+                              Width: =Parent.Width *90%
+                              X: =Parent.Width/2 - Self.Width/2
+            - conBlock2:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutMinHeight: =0
+                  LayoutMinWidth: =0
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                  Y: =20
+                Children:
+                  - conBlock2Item1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - lblItem2.1:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =RGBA(202, 202, 202, 1)
+                              Font: =Font.'Open Sans'
+                              FontWeight: =FontWeight.Semibold
+                              PaddingBottom: =0
+                              PaddingLeft: =25
+                              PaddingTop: =15
+                              Text: ="Workspace"
+                              Visible: =If(varSidebar, true, false)
+                  - conBlock1ItemCon_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - conBlock1Item2_1:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =41
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width
+                            Children:
+                              - icoItem2_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    FillPortions: =If(varSidebar, 1, 0)
+                                    Height: =Parent.Height
+                                    Icon: =Icon.Person
+                                    PaddingBottom: =9
+                                    PaddingLeft: =If(varSidebar, 20, 0)
+                                    PaddingTop: =7
+                                    Width: =Parent.Width
+                              - lblItem2_1:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =12
+                                    Text: ="Teams"
+                                    Visible: =If(varSidebar, true, false)
+                        - Button1_1:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(0, 0, 0, 0)
+                              DisabledFill: =RGBA(0, 0, 0, 0)
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(0, 0, 0, 0)
+                              HoverFill: =RGBA(149, 149, 149, 0.2)
+                              PressedBorderColor: =
+                              PressedColor: =
+                              PressedFill: =ColorFade(RGBA(149, 149, 149, 0.2), -20%)
+                              Text: =
+                              Width: =Parent.Width *90%
+                              X: =Parent.Width/2 - Self.Width/2
+                              Y: =1
+                  - conBlock1ItemCon2_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - conBlock1Item3_1:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =41
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width
+                            Children:
+                              - icoItem3_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    FillPortions: =If(varSidebar, 1, 0)
+                                    Height: =Parent.Height
+                                    Icon: =Icon.Message
+                                    PaddingBottom: =9
+                                    PaddingLeft: =If(varSidebar, 20, 0)
+                                    PaddingTop: =7
+                                    Width: =Parent.Width
+                              - lblItem3_1:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =12
+                                    Text: ="Messages"
+                                    Visible: =If(varSidebar, true, false)
+                        - Button2_1:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(0, 0, 0, 0)
+                              DisabledFill: =RGBA(0, 0, 0, 0)
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(0, 0, 0, 0)
+                              HoverFill: =RGBA(149, 149, 149, 0.2)
+                              PressedBorderColor: =
+                              PressedColor: =
+                              PressedFill: =ColorFade(RGBA(149, 149, 149, 0.2), -20%)
+                              Text: =
+                              Width: =Parent.Width *90%
+                              X: =Parent.Width/2 - Self.Width/2
+                  - conBlock1ItemCon3_1:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutMinHeight: =0
+                        LayoutMinWidth: =0
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.Width
+                      Children:
+                        - conBlock1Item4_1:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =41
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =Parent.Width
+                            Children:
+                              - icoItem4_1:
+                                  Control: Classic/Icon@2.5.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    FillPortions: =If(varSidebar, 1, 0)
+                                    Height: =Parent.Height
+                                    Icon: =Icon.Settings
+                                    PaddingBottom: =9
+                                    PaddingLeft: =If(varSidebar, 20, 0)
+                                    PaddingTop: =7
+                                    Width: =Parent.Width
+                              - lblItem4_1:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 18, 107, 1)
+                                    Color: =RGBA(202, 202, 202, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Size: =12
+                                    Text: ="Analytics"
+                                    Visible: =If(varSidebar, true, false)
+                        - Button3_1:
+                            Control: Classic/Button@2.2.0
+                            Properties:
+                              BorderColor: =ColorFade(Self.Fill, -15%)
+                              BorderStyle: =BorderStyle.None
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(0, 0, 0, 0)
+                              DisabledFill: =RGBA(0, 0, 0, 0)
+                              Fill: =RGBA(0, 0, 0, 0)
+                              Font: =Font.'Open Sans'
+                              Height: =Parent.Height
+                              HoverBorderColor: =
+                              HoverColor: =RGBA(0, 0, 0, 0)
+                              HoverFill: =RGBA(149, 149, 149, 0.2)
+                              PressedBorderColor: =
+                              PressedColor: =
+                              PressedFill: =ColorFade(RGBA(149, 149, 149, 0.2), -20%)
+                              Text: =
+                              Width: =Parent.Width *90%
+                              X: =Parent.Width/2 - Self.Width/2
+            - conSpacing:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =2
+                  LayoutMinHeight: =0
+                  LayoutMinWidth: =0
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =Parent.Width
+                  Y: =40
+      - conTitle:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height * 7%
+            LayoutDirection: =LayoutDirection.Horizontal
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+          Children:
+            - icoLogo:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0.5
+                  Height: =Parent.Height
+                  Icon: =Icon.CameraAperture
+                  LayoutMinWidth: =0
+                  PaddingBottom: =10
+                  PaddingLeft: =10
+                  PaddingTop: =10
+            - lblTitle:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  FillPortions: =1
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Bold
+                  Height: =Parent.Height
+                  LayoutMinWidth: =0
+                  PaddingLeft: =0
+                  Size: =14
+                  Text: ="ProjectHub"
+                  Visible: =If(varSidebar, true, false)
+            - icoCancel:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0.3
+                  Height: =Parent.Height
+                  Icon: = If(varSidebar, Icon.Cancel, Icon.Hamburger)
+                  LayoutMinWidth: =If(varSidebar, 0, Parent.Width)
+                  OnSelect: |-
+                    =UpdateContext({varSidebar: !varSidebar})
+                  PaddingBottom: =15
+                  PaddingTop: =15
+                  Width: =0
