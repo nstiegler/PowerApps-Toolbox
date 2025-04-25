@@ -22,7 +22,7 @@ This repository serves as a personal toolbox for Power Apps developers, containi
 
 2. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/PowerApps-Toolbox.git
+   git clone https://github.com/nstiegler/PowerApps-Toolbox.git
    ```
 
 3. **Explore Assets**:
@@ -57,4 +57,4 @@ This project is licensed under the [MIT License](./LICENSE.md).
 
 ## Contact
 - Questions or suggestions? Open an issue on GitHub.
-- Connect with me on [LinkedIn/X/Power Apps Community] (replace with your preferred contact method).
+
