@@ -1,0 +1,24 @@
+- btnButton:
+    Control: Classic/Button@2.2.0
+    Properties:
+      BorderColor: =Color.Transparent
+      BorderStyle: =BorderStyle.None
+      Color: =If(toggle, RGBA(0, 0, 0, 1), RGBA(80, 80, 80, 1))
+      Fill: =If(toggle, RGBA(255, 255, 255, 1), RGBA(222, 222, 222, 1))
+      Height: =32
+      HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+      HoverColor: =Self.Color
+      HoverFill: =ColorFade(Self.Fill, -10%)
+      OnSelect: |-
+        =UpdateContext({ toggle: !toggle })
+      PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+      PressedFill: =ColorFade(Self.Fill, -20%)
+      RadiusBottomLeft: =5
+      RadiusBottomRight: =5
+      RadiusTopLeft: =5
+      RadiusTopRight: =5
+      Size: =11
+      Text: =If(toggle, "On", "Off")
+      Width: =96
+      X: =320
+      Y: =180
