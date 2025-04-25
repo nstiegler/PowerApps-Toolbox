@@ -1,0 +1,381 @@
+- ButtonDropdowns:
+    Control: GroupContainer@1.3.0
+    Variant: ManualLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      Height: =395
+      RadiusBottomLeft: =0
+      RadiusBottomRight: =0
+      RadiusTopLeft: =0
+      RadiusTopRight: =0
+      Width: =535
+      X: =549
+      Y: =270
+    Children:
+      - conDropdown1:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =btnItem1_1.Height*4 + 20
+            LayoutDirection: =LayoutDirection.Vertical
+            PaddingBottom: =10
+            PaddingTop: =10
+            Visible: =showDropdown1
+            Width: =181
+            X: =conButtons.X
+            Y: =conButtons.Y + conButtons.Height + 15
+          Children:
+            - btnItem1_1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="New Tab"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem2_1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="New Window"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem3_1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Share"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem4_1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Print..."
+                  Width: =181
+                  X: =495
+                  Y: =230
+      - conDropdown:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.Regular
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =btnItem1_2.Height*6 + 20
+            LayoutDirection: =LayoutDirection.Vertical
+            PaddingBottom: =10
+            PaddingTop: =10
+            Visible: =showDropdown
+            Width: =181
+            X: =conButtons.X + btn1.Width +5
+            Y: =conButtons.Y + conButtons.Height + 15
+          Children:
+            - btnItem1_2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Undo"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem2_2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Redo"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem3_2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Find"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem4_2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Cut"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem5_2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Copy"
+                  Width: =181
+                  X: =495
+                  Y: =230
+            - btnItem6_2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(247, 247, 247, 1)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =RGBA(247, 247, 247, 1)
+                  OnSelect: =
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(RGBA(245, 245, 245, 1), -5%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =11
+                  Text: ="Paste"
+                  Width: =181
+                  X: =495
+                  Y: =230
+      - conButtons:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Height: =42
+            LayoutDirection: =LayoutDirection.Horizontal
+            PaddingLeft: =5
+            PaddingRight: =5
+            Width: =250
+            X: =40
+            Y: =40
+          Children:
+            - btn1:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  AlignInContainer: =AlignInContainer.Center
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =If(showDropdown1, RGBA(237, 237, 237, 1), Color.White)
+                  FillPortions: =1
+                  Font: =Font.'Open Sans'
+                  Height: =32
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =ColorFade(Self.Fill, -10%)
+                  LayoutMinWidth: =0
+                  OnSelect: |-
+                    =UpdateContext({ showDropdown1: !showDropdown1, showDropdown: false })
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(Self.Fill, -20%)
+                  RadiusBottomLeft: =5
+                  RadiusBottomRight: =5
+                  RadiusTopLeft: =5
+                  RadiusTopRight: =5
+                  Size: =11
+                  Text: ="File"
+                  Width: =181
+                  X: =1155
+                  Y: =285
+            - btn2:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  AlignInContainer: =AlignInContainer.Center
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderStyle: =BorderStyle.None
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  Fill: =If(showDropdown, RGBA(237, 237, 237, 1), Color.White)
+                  FillPortions: =1
+                  Font: =Font.'Open Sans'
+                  Height: =32
+                  HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+                  HoverColor: =Self.Color
+                  HoverFill: =ColorFade(Self.Fill, -10%)
+                  LayoutMinWidth: =0
+                  OnSelect: |-
+                    =UpdateContext({
+                      showDropdown: !showDropdown,
+                      showDropdown1: false
+                    })
+                  PaddingLeft: =15
+                  PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+                  PressedFill: =ColorFade(Self.Fill, -20%)
+                  RadiusBottomLeft: =5
+                  RadiusBottomRight: =5
+                  RadiusTopLeft: =5
+                  RadiusTopRight: =5
+                  Size: =11
+                  Text: ="Edit"
+                  Width: =181
+                  X: =1155
+                  Y: =284
