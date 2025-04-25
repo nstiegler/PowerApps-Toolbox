@@ -85,6 +85,6 @@ To ensure consistency and quality, please follow these guidelines:
 ## Questions?
 If you have questions or need help, please:
 - Open an issue with the `question` label.
-- Reach out via [LinkedIn/X/Power Apps Community] (replace with preferred contact method).
+
 
 Thank you for helping make PowerApps-Toolbox a valuable resource for the Power Apps community!
