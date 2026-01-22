@@ -1,0 +1,96 @@
+- btnModal:
+    Control: Classic/Button@2.2.0
+    Properties:
+      BorderColor: =ColorFade(Self.Fill, -15%)
+      BorderStyle: =BorderStyle.None
+      Color: =RGBA(0, 0, 0, 1)
+      DisabledBorderColor: =RGBA(166, 166, 166, 1)
+      DisabledColor: =RGBA(0, 0, 0, 1)
+      Fill: =RGBA(219, 219, 219, 1)
+      Font: =Font.'Open Sans'
+      HoverBorderColor: =ColorFade(Self.Fill, -20%)
+      HoverColor: =RGBA(0, 0, 0, 1)
+      HoverFill: =ColorFade(Self.Fill, -20%)
+      OnSelect: |-
+        =UpdateContext({ showModal: true })
+      PressedBorderColor: =ColorFade(Self.Fill, -40%)
+      PressedColor: =RGBA(0, 0, 0, 1)
+      PressedFill: =ColorFade(Self.Fill, -40%)
+      RadiusBottomLeft: =5
+      RadiusBottomRight: =5
+      RadiusTopLeft: =5
+      RadiusTopRight: =5
+      Size: =11
+      Text: ="PopUp"
+      Width: =120
+      X: =1183
+      Y: =74
+- recDarken:
+    Control: Rectangle@2.3.0
+    Group: grpModal
+    Properties:
+      BorderColor: =RGBA(0, 18, 107, 1)
+      Fill: =RGBA(0, 0, 0, 0.2)
+      Height: =Parent.Height
+      Visible: =showModal
+      Width: =Parent.Width
+- conModalItems:
+    Control: GroupContainer@1.3.0
+    Variant: ManualLayout
+    Group: grpModal
+    Properties:
+      DropShadow: =DropShadow.Regular
+      Fill: =RGBA(255, 255, 255, 1)
+      RadiusBottomLeft: =10
+      RadiusBottomRight: =10
+      RadiusTopLeft: =10
+      RadiusTopRight: =10
+      Visible: =showModal
+      X: =Parent.Width/2 - Self.Width/2
+      Y: =Parent.Height/2 - Self.Height/2
+    Children:
+      - btnCloseModal:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(230, 230, 230, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.Fill, -20%)
+            HoverColor: =RGBA(0, 0, 0, 1)
+            HoverFill: =ColorFade(Self.Fill, -20%)
+            OnSelect: |-
+              =UpdateContext({ showModal: false })
+            PressedBorderColor: =ColorFade(Self.Fill, -40%)
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =ColorFade(Self.Fill, -40%)
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =11
+            Text: ="Decline"
+            Width: =80
+            X: =Parent.Width - Self.Width - 20
+            Y: =Parent.Height - Self.Height - 20
+      - lblBody:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            Text: ="Click the button below to close."
+            Width: =402
+            X: =20
+            Y: =75
+      - lblTitle:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Text: ="Hello!"
+            X: =20
+            Y: =20

@@ -1,0 +1,148 @@
+- conCard:
+    Control: GroupContainer@1.3.0
+    Variant: ManualLayout
+    Properties:
+      DropShadow: =DropShadow.Regular
+      Fill: =RGBA(255, 255, 255, 1)
+      Height: =356
+      RadiusBottomLeft: =15
+      RadiusBottomRight: =15
+      RadiusTopLeft: =15
+      RadiusTopRight: =15
+      Width: =429
+      X: =475
+      Y: =170
+    Children:
+      - btnDeploy:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderStyle: =BorderStyle.None
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =30
+            HoverBorderColor: =ColorFade(Self.BorderColor, -20%)
+            HoverColor: =Self.Color
+            HoverFill: =ColorFade(Self.Fill, -10%)
+            PressedBorderColor: =ColorFade(Self.BorderColor, -40%)
+            PressedFill: =ColorFade(Self.Fill, -20%)
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =11
+            Text: ="Deploy"
+            Width: =80
+            X: =Parent.Width - Self.Width - 30
+            Y: =Parent.Height - Self.Height - 20
+      - btnCancel:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =1
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =1
+            Height: =30
+            HoverBorderColor: =ColorFade(Self.BorderColor, -10%)
+            HoverColor: =Self.Color
+            HoverFill: =RGBA(219, 219, 219, 1)
+            PressedBorderColor: =ColorFade(Self.BorderColor, -20%)
+            PressedColor: =RGBA(0, 0, 0, 1)
+            PressedFill: =ColorFade(Self.HoverFill, -10%)
+            RadiusBottomLeft: =5
+            RadiusBottomRight: =5
+            RadiusTopLeft: =5
+            RadiusTopRight: =5
+            Size: =11
+            Text: |-
+              ="Cancel
+              "
+            Width: =80
+            X: =30
+            Y: =Parent.Height - Self.Height - 20
+      - txtItem2:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(201, 201, 201, 1)
+            BorderThickness: =1
+            Default: =
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =2
+            Font: =Font.'Open Sans'
+            Height: =32
+            HintText: ="Email"
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedBorderColor: =RGBA(135, 135, 135, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Size: =11
+            Width: =Parent.Width - 60
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =209
+      - lblItem2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            Size: =11
+            Text: ="Framework"
+            Width: =txtItem2.Width
+            X: =txtItem2.X
+            Y: =183
+      - txtItem1:
+          Control: Classic/TextInput@2.3.2
+          Properties:
+            BorderColor: =RGBA(201, 201, 201, 1)
+            BorderThickness: =1
+            Default: =
+            DisabledFill: =RGBA(255, 255, 255, 1)
+            FocusedBorderThickness: =2
+            Font: =Font.'Open Sans'
+            Height: =32
+            HintText: ="Name of your project"
+            HoverBorderColor: =Self.BorderColor
+            HoverFill: =RGBA(255, 255, 255, 1)
+            PressedBorderColor: =RGBA(135, 135, 135, 1)
+            PressedFill: =RGBA(255, 255, 255, 1)
+            Size: =11
+            Width: =Parent.Width - 60
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =135
+      - lblItem1:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Semibold
+            Height: =22
+            Size: =11
+            Text: ="Name"
+            Width: =txtItem1.Width
+            X: =txtItem1.X
+            Y: =109
+      - lblTitle2:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.'Open Sans'
+            Height: =28
+            Size: =11
+            Text: ="Deploy your new project in one-click."
+            Width: =Parent.Width - 60
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =65
+      - lblTitle:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =27
+            Size: =12
+            Text: ="Create Project"
+            Width: =Parent.Width -60
+            X: =Parent.Width/2 - Self.Width/2
+            Y: =30

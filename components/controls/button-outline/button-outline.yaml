@@ -1,0 +1,26 @@
+- OutlineButton:
+    Control: Classic/Button@2.2.0
+    Properties:
+      BorderColor: =RGBA(219, 219, 219, 1)
+      BorderThickness: =1
+      Color: =RGBA(0, 0, 0, 1)
+      Fill: =RGBA(0, 0, 0, 0)
+      FocusedBorderThickness: =1
+      Height: =32
+      HoverBorderColor: =ColorFade(Self.BorderColor, -10%)
+      HoverColor: =Self.Color
+      HoverFill: =RGBA(219, 219, 219, 1)
+      PressedBorderColor: =ColorFade(Self.BorderColor, -20%)
+      PressedColor: =RGBA(0, 0, 0, 1)
+      PressedFill: =ColorFade(Self.HoverFill, -10%)
+      RadiusBottomLeft: =5
+      RadiusBottomRight: =5
+      RadiusTopLeft: =5
+      RadiusTopRight: =5
+      Size: =11
+      Text: |-
+        ="Button
+        "
+      Width: =96
+      X: =154
+      Y: =134
