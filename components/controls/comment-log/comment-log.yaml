@@ -1,0 +1,177 @@
+ComponentDefinitions:
+  cmpCommentHistory:
+    DefinitionType: CanvasComponent
+    AllowCustomization: true
+    CustomProperties:
+      OnSaveButtonClick:
+        PropertyKind: Action
+        DisplayName: OnSaveButtonClick
+        Description: A custom property
+        ReturnType: None
+      OnSendButtonClick:
+        PropertyKind: Event
+        DisplayName: OnSendButtonClick
+        Description: A custom property
+        ReturnType: None
+        Default: =
+      Props:
+        PropertyKind: Input
+        DisplayName: Props
+        Description: A custom property
+        DataType: Record
+        Default: |-
+          ={
+              CommentGallery: {Visible: !IsEmpty(Self.State.CommentGallery.Items)},
+              btnShowComments: {Visible: true},
+              InputNewComment: {
+                  DisplayMode: DisplayMode.Edit,
+                  PlaceholderText: "",
+                  Visible: true
+              }
+          }
+      SelectedRecord:
+        PropertyKind: Input
+        DisplayName: SelectedRecord
+        Description: A custom property
+        RaiseOnReset: true
+        DataType: Record
+        Default: ={Comments:""}
+      State:
+        PropertyKind: Output
+        DisplayName: State
+        Description: A custom property
+        DataType: Record
+    Properties:
+      Height: =App.DesignHeight-Self.Y
+      OnReset: "=Clear(colCommentTable); If(!IsBlank(cmpCommentHistory.SelectedRecord.Comments), ForAll(Table(ParseJSON(cmpCommentHistory.SelectedRecord.Comments)) As c, Collect(colCommentTable, {Date: Text(c.Value.Date), CommentDate: DateTimeValue(c.Value.CommentDate), User: {Name: Text(c.Value.User.Name), Email: Text(c.Value.User.Email)}, Comment: Text(c.Value.Comment)}))); "
+      OnSaveButtonClick: |-
+        =Collect(colCommentTable, {Date: Text(Now()), CommentDate: Now(), User: {Name: User().FullName, Email: User().Email}, Comment: Self.State.NewCommentInput.Value}); Self.OnSendButtonClick(); Reset(inpNewComment_1);
+      State: |
+        ={
+            CommentGallery: {
+                Visible: !IsEmpty(colCommentTable),
+                Items: Table(colCommentTable)
+            },
+            NewCommentInput: {Value: inpNewComment_1.Value}
+        }
+      Width: =350
+    Children:
+      - cntrCommentHistory_1:
+          Control: GroupContainer@1.4.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =5
+            LayoutJustifyContent: =LayoutJustifyContent.End
+            PaddingBottom: =3
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =3
+            Width: =Parent.Width
+          Children:
+            - galCommentHistory_1:
+                Control: Gallery@2.15.0
+                Variant: BrowseLayout_Flexible_NewsFeed_pcfCore
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DelayItemLoading: =true
+                  Items: =Sort(colCommentTable,CommentDate,SortOrder.Descending)
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  LayoutMinWidth: =150
+                  LoadingSpinner: =LoadingSpinner.Data
+                  TemplateSize: =Min(55, Self.Height - 60)
+                  Visible: =cmpCommentHistory.State.CommentGallery.Visible
+                  Width: =Parent.Width
+                Children:
+                  - Separator1_2:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        Fill: =App.Theme.Colors.Darker30
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Max(Parent.TemplateHeight - 1, HtmlText5_2.Height)
+                  - HtmlText5_2:
+                      Control: HtmlViewer@2.1.0
+                      Properties:
+                        AutoHeight: =true
+                        HtmlText: |-
+                          =$"<div style='font-family:Segoe UI, sans-serif; font-size:14px; padding:10px; border:1px solid #ccc; border-radius:5px; background-color:#edf0f2;'>
+                            <div style='margin-bottom:10px;'>
+                              <strong style='color:#2a2a2a;'>{ThisItem.User.Name}</strong>
+                              <span style='color:#333840; font-size:12px; float:right;'>{ThisItem.CommentDate}</span>
+                              <div style='clear:both; padding-top:5px;'>{ThisItem.Comment}.</div>
+                            </div>"
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Width: =Parent.TemplateWidth-10
+            - HtmlText6:
+                Control: HtmlViewer@2.1.0
+                Properties:
+                  FillPortions: =1
+                  Height: =200
+                  HtmlText: |-
+                    =$"<div style='vertical-align: middle; display: flex; justify-content: center; align-items: middle; font-size: 22px; color: #25486e; font-family: segoe ui; width: {Self.Width}px; height: {Self.Height}- 1px; border-top: 2px solid rgba(255, 255, 255, 0.1); border-left: 2px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.1); border-radius: 24px; backdrop-filter: blur(6px);'>No comments listed</div>"
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  LayoutMinWidth: =150
+                  Visible: =IsEmpty(colCommentTable)
+            - Container17_1:
+                Control: GroupContainer@1.4.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =80
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =3
+                  LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  LayoutMinWidth: =150
+                  PaddingBottom: =3
+                  PaddingLeft: =5
+                  PaddingRight: =5
+                  PaddingTop: =3
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - inpNewComment_1:
+                      Control: TextInput@0.0.54
+                      Properties:
+                        Appearance: ='TextInputCanvas.Appearance'.Outline
+                        FillPortions: =1
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        LayoutMinWidth: =150
+                        Mode: ='TextInputCanvas.Mode'.Multiline
+                        Placeholder: =cmpCommentHistory.Props.InputNewComment.PlaceholderText
+                        Visible: =cmpCommentHistory.Props.InputNewComment.Visible
+                  - ButtonCanvas25_1:
+                      Control: Button@0.0.45
+                      Properties:
+                        Appearance: ='ButtonCanvas.Appearance'.Transparent
+                        BorderRadius: =0
+                        FontSize: =24
+                        Icon: ="Send"
+                        IconStyle: ='ButtonCanvas.IconStyle'.Outline
+                        Layout: ='ButtonCanvas.Layout'.IconOnly
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        OnSelect: =cmpCommentHistory.OnSaveButtonClick()
+                        Text: ="Save"
+                        Width: =30
+                        X: =40
+                        Y: =40
