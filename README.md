@@ -1,23 +1,35 @@
 # PowerApps-Toolbox
 
-A personal library of reusable Power Platform snippets and components—designed for quick copy-paste during development.
+A curated collection of reusable Power Apps components, solutions, flows, scripts, and templates for rapid development and reference.
 
-## Quick Start
+## Table of Contents
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+- [Repository Structure](#repository-structure)
+- [How to Use Assets](#how-to-use-assets)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-1. Browse the [Asset Catalog](./docs/CATALOG.md) to find what you need
-2. Open the `.yaml` file for any control
-3. Copy and paste directly into Power Apps Studio (Tree View)
+## Overview
 
-## What's Here
+This repository serves as a personal toolbox for Power Apps developers, containing reusable canvas apps, Power Automate flows, custom connectors, solutions, scripts, and templates. Whether you're building HR solutions, finance workflows, or general-purpose apps, these assets are designed to save time and provide reliable starting points.
 
-**Currently available:**
-- `/components/controls/` — 13 Canvas App UI controls (buttons, modals, drawers, sidebar, etc.)
+## Getting Started
 
-**Scaffolded for future use:**
-- `/components/flows/` — Power Automate flows
-- `/solutions/` — Domain-specific solution packages
-- `/scripts/` — Automation and deployment scripts
-- `/templates/` — Boilerplate starters
+1. **Prerequisites**:
+   - Power Apps account with access to your environment.
+   - [Power Platform CLI](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction) installed for importing/exporting assets.
+   - Basic knowledge of Power Apps, Power Automate, and Git.
+
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/nstiegler/PowerApps-Toolbox.git
+   ```
+
+3. **Explore Assets**:
+   - Browse the [Asset Catalog](./docs/CATALOG.md) to find components, solutions, or scripts.
+   - Check `/docs/guides` for detailed setup and customization instructions.
 
 ## Repository Structure
 
@@ -34,19 +46,36 @@ PowerApps-Toolbox/
     └── guides/        ← How-to guides
 ```
 
-## Using Controls
+| Folder | Purpose |
+|--------|---------|
+| `/components` | Reusable canvas apps, flows, connectors, and controls |
+| `/solutions` | Domain-specific solutions (e.g., HR, finance) |
+| `/scripts` | Automation scripts for exporting, deploying, or configuring assets |
+| `/templates` | Boilerplate files for starting new projects |
+| `/docs` | Documentation, including guides and the asset catalog |
 
-1. Open your Canvas App in Power Apps Studio
-2. Switch to **Tree View**
-3. Select a screen or container
-4. Paste the YAML content
+## How to Use Assets
 
-Most controls require context variables (e.g., `showModal`, `selectedTab`). Check each control's entry in the [Catalog](./docs/CATALOG.md) for required variables.
+1. **Find an Asset**:
+   - Use the [Asset Catalog](./docs/CATALOG.md) to locate components or solutions by name, tag, or category.
+
+2. **Import an Asset**:
+   - For solutions: `pac solution import --path ./solutions/hr/HR_Onboarding.zip`
+   - For flows: Import `.zip` files via Power Automate.
+   - For canvas apps: Import `.msapp` files via Power Apps.
+   - For controls: Copy YAML from the control's folder and paste into Power Apps Studio (Tree View).
+
+3. **Customize**:
+   - Follow the `README.md` in each asset's folder for setup and customization instructions.
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines. The short version: add your asset to the right folder, document it, and update the catalog.
+Want to add your own reusable assets? See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on submitting components, solutions, or scripts.
 
 ## License
 
-[MIT License](./LICENSE.md)
+This project is licensed under the [MIT License](./LICENSE.md).
+
+## Contact
+
+Questions or suggestions? Open an issue on GitHub.
